@@ -110,8 +110,7 @@ public class HashLoadBalance<T> implements LoadBalance<T> {
             staticWeightInvokersCache = null;
             return;
         }
-
-        List<Invoker<T>> sortedInvokersTmp = new ArrayList<Invoker<T>>(invokers);
+        final List<Invoker<T>> sortedInvokersTmp = new ArrayList<>(invokers);
         Collections.sort(sortedInvokersTmp, comparator);
 
         sortedInvokersCache = sortedInvokersTmp;
